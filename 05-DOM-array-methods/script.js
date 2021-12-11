@@ -73,8 +73,18 @@ function filterList() {
 	updateDOM();
 }
 
+function reduceList() {
+	const wealth = data.reduce((acc, user) => (acc += user.money), 0);
+	const weathEl = document.createElement('div');
+	weathEl.innerHTML = `<h3> Total Wealth: <strong>${formatMoney(
+		wealth
+	)}</strong></h3>`;
+	main.appendChild(weathEl);
+}
+
 // Event Listeners
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortList);
 showMillBtn.addEventListener('click', filterList);
+calcWealthBtn.addEventListener('click', reduceList);
