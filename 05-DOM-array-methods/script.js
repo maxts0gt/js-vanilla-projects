@@ -67,7 +67,14 @@ function sortList() {
 	updateDOM();
 }
 
+// Filter List Function
+function filterList() {
+	data = data.filter((item) => item.money >= 1000000);
+	updateDOM();
+}
+
 // Event Listeners
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortList);
+showMillBtn.addEventListener('click', filterList);
